@@ -32,7 +32,9 @@ public class Home extends HttpServlet {
 		//set the message in the next jsp 		
 	    session.setAttribute("message", message);
 		
+	
 		getServletContext().getRequestDispatcher(nextURL).forward(request,response);
+	
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

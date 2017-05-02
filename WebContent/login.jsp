@@ -14,8 +14,12 @@
 	Password:&nbsp;<input type="password" name="password" value="1234"><br/>
 	<input type="hidden" name="action" value="login">
 	<input type="submit" value="Log In">
+
+	
+	
 </form>
 <p/>
 <a href="LoginServlet">What happens if you go directly to login servlet without logging in?</a>
 </body>
 </html>
+

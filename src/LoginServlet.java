@@ -35,6 +35,19 @@ public class LoginServlet extends HttpServlet {
 		//then the code below will determine if they clicked logout and kill the session
 		//before sending the user back to the login page
 		
+		
+		if(!action.isEmpty()||!(action==null)){
+	    if (request.getParameter("action").toString().equals("logout")){
+	        //Go back to login.jsp. 
+	        nextPage = "/login.jsp";
+	        response.sendRedirect(request.getContextPath() + nextPage);
+	        return;//return here exits the method and prevents an error
+	    }else{
+	        nextPage = "/home.jsp";
+	    }
+	}
+		
+		
 
 			
 		//putting a blank message just ensures I have a blank message.Since the message is set in the session
@@ -44,6 +57,10 @@ public class LoginServlet extends HttpServlet {
 
 		//Existential question: Does the user exist? Are they really who they say they are???
 		//And while you're at it... what is the meaning of life?
+		
+		
+		
+		
 		if (DbUser.isValidUser(email,password)){
 			//add the valid user to the session
 			session.setAttribute("user", DbUser.getUserByEmail(email));

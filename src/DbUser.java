@@ -67,5 +67,9 @@ public class DbUser {
 		//and return true if successful, false otherwise
 		return true;
 	}
+	public static boolean isValidUser(String email, String password) {
+		
+		return false;
+	}
 
 }
